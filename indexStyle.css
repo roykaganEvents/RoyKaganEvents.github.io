@@ -1,0 +1,17 @@
+body {
+    font-size: 40px;
+    font-family: 'david';
+    background-image: url("background.jpg");
+    background-repeat : no-repeat;
+    background-size : 100%;
+    text-align: center;
+}
+
+#headline {
+    color: coral;
+}
+a{
+    float : right;
+    text-align: right;
+    direction: rtl;
+}
