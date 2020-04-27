@@ -1,4 +1,25 @@
-﻿<!DOCTYPE html>
+﻿<?php
+
+    $email = $_GET['email'];
+    $firstname = $_GET['firstname'];
+    $lastname = $_GET['lastname'];
+    $peoplenum = $_GET['peoplenum'];
+    $coming = $_GET['coming'];
+
+    $show_success_msg = false;
+
+    if ($email != '' && $firstname != '' && $lastname != '' && $peoplenum != '' && $coming != '') {
+        // SEND MAIL
+        $message = "name: {$firstname}\r\nlastname: {$lastname}\r\npeople: {$peoplenum}\r\ncoming: {$coming}";
+        $success = mail('shahaf@b2cprint.com', 'אישור הצטרפות', $message, 'From: you@example.com');
+        if (!$success) {
+            echo 'here';die();
+        }
+        $show_success_msg = true;
+    }
+?>
+
+<!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
@@ -7,6 +28,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+
         body {
             text-align: center;
             font-size: 40px;
@@ -20,11 +42,22 @@
             height: 250px;
         }
 
-        body {
+         body {
             padding: 0;
             margin: 0;
-            background-image: url("roy.jpg");
-            font-family: 'David'
+            background-image: url(roy.jpg);
+            background-size: cover;
+            font-family: 'David';
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+         input {
+            font-size: 30px;
+            background: #000;
+            border-radius: 25px;
+            border: 1px solid #fff;
+            color: #fff;
         }
 
         h1 {
@@ -66,6 +99,13 @@
     </style>
 </head>
 <body dir="rtl" text=white>
+
+    <?php if ($show_success_msg): ?>
+    <div style="width: 100%; background: red; color: white;">
+        <h1>מצפים לראותכם</h1>
+    </div>
+    <?php endif; ?>
+
     <h1>רועי קגן</h1>
     <h1>חוגג </h1>
     <h1>בר מצווה</h1>
@@ -78,7 +118,7 @@
     <p><i><b style="font-size:45px;">הבר מצווה תיהיה בשעה 4 ולפני כן עלייה לתורה בשעה 2... וכולי</b> </i></p>
 
     <main>
-        <form class="contact-form" method="post" name="myemailform" action="form-to-email.php" style="font-size:47px;">
+        <form class="contact-form" method="get" name="myemailform" style="font-size:47px;">
             <strong><b style="color:yellow;">אישור הגעה</b></strong>:
             <p> </p>
             <table>
@@ -87,7 +127,7 @@
                         שם:
                     </td>
                     <td>
-                        <input style="font-size:30px;" type="text" placeholder="שם" name="firstname">
+                        <input style="font-size:30px;" type="text" placeholder="שם" name="firstname" required>
                     </td>
                 </tr>
                 <tr>
@@ -95,7 +135,7 @@
                         שם משפחה:
                     </td>
                     <td>
-                        <input style="font-size:30px;" type="text" placeholder="שם משפחה" name="lastname">
+                        <input style="font-size:30px;" type="text" placeholder="שם משפחה" name="lastname" required>
                     </td>
                 </tr>
                 <tr>
@@ -103,7 +143,7 @@
                         מספר הנפשות:
                     </td>
                     <td>
-                        <input style="font-size:30px;" type="text" placeholder="מספר הנפשות" name="peoplenum">
+                        <input style="font-size:30px;" type="text" placeholder="מספר הנפשות" name="peoplenum" required>
                     </td>
                 </tr>
                 <tr>
@@ -111,8 +151,8 @@
                         מגיעים בוודאות:
                     </td>
                     <td>
-                        <input style="font-size:30px;" type="radio" name="yes" />כן
-                        <input style="font-size:30px;" type="radio" name="no" />לא בטוח
+                        <input style="font-size:30px;" type="radio" name="coming" value="yes" checked />כן
+                        <input style="font-size:30px;" type="radio" name="coming" value="no" />לא בטוח
                     </td>
                 </tr>
                 <tr>
@@ -120,12 +160,12 @@
                         אימייל:
                     </td>
                     <td>
-                        <input style="font-size:30px;" type="text" placeholder="האימייל שלך" name="email">
+                        <input style="font-size:30px;" type="text" placeholder="האימייל שלך" name="email" required>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <button style="font-size:30px;" onclick="alert('מצפים לראותכם')" type="submit" name="senddetails">אישור</button>
+                        <button style="font-size:30px;" type="submit">אישור</button>
                         <input style="font-size:30px;" type="reset" value="מחק הכל" />
                     </td>
                 </tr>
