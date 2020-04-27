@@ -17,3 +17,7 @@ a{
     direction: ltr;
     color: darkcyan;
 }
+audio{
+    float: right;
+    text-align: right;
+}
