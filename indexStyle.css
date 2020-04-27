@@ -1,17 +1,19 @@
 body {
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'david';
-    background-image: url("background.jpg");
+    background-image: url("images.jpg");
     background-repeat : no-repeat;
     background-size : 100%;
     text-align: center;
+    color:antiquewhite;
+    direction: rtl;
 }
 
 #headline {
-    color: coral;
+    color: cornflowerblue;
 }
 a{
-    float : right;
-    text-align: right;
-    direction: rtl;
+    text-align: center;
+    direction: ltr;
+    color: darkcyan;
 }
