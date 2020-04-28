@@ -1,23 +1,4 @@
-﻿<?php
-
-    $email = $_GET['email'];
-    $firstname = $_GET['firstname'];
-    $lastname = $_GET['lastname'];
-    $peoplenum = $_GET['peoplenum'];
-    $coming = $_GET['coming'];
-
-    $show_success_msg = false;
-
-    if ($email != '' && $firstname != '' && $lastname != '' && $peoplenum != '' && $coming != '') {
-        // SEND MAIL
-        $message = "name: {$firstname}\r\nlastname: {$lastname}\r\npeople: {$peoplenum}\r\ncoming: {$coming}";
-        $success = mail('shahaf@b2cprint.com', 'אישור הצטרפות', $message, 'From: you@example.com');
-        if (!$success) {
-            echo 'here';die();
-        }
-        $show_success_msg = true;
-    }
-?>
+﻿
 
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
@@ -99,83 +80,21 @@
     </style>
 </head>
 <body dir="rtl" text=white>
-
-    <?php if ($show_success_msg): ?>
-    <div style="width: 100%; background: red; color: white;">
-        <h1>מצפים לראותכם</h1>
-    </div>
-    <?php endif; ?>
-
-    <h1>רועי קגן</h1>
+    <h1>נועם כהן</h1>
     <h1>חוגג </h1>
     <h1>בר מצווה</h1>
-    <h2><i style="color:lightgoldenrodyellow;"><b>SAVE THE DATE 12.3.18</b> </i></h2>
+    <h2><i style="color:lightgoldenrodyellow;"><b>SAVE THE DATE 5.9.20</b> </i></h2>
 
     <img src="https://i.ytimg.com/vi/t4-Z8vVMRBs/hqdefault.jpg">
     <p> </p>
-    <p><i style="font-size:50px;">מיקום:</i></p>
-    <a style="font-size:30px;" href="https://www.waze.com/ul?ll=32.24826780%2C34.91324530&navigate=yes" target="_blank"><img src="https://lh3.googleusercontent.com/ixIYlJjuyefo0mBaCeo9p75ofhT5dBzu2NvVEOYvGBasiL_nvaZgqLkVKvF0GgpnGQ"></a>
-    <p><i><b style="font-size:45px;">הבר מצווה תיהיה בשעה 4 ולפני כן עלייה לתורה בשעה 2... וכולי</b> </i></p>
-
-    <main>
-        <form class="contact-form" method="get" name="myemailform" style="font-size:47px;">
-            <strong><b style="color:yellow;">אישור הגעה</b></strong>:
-            <p> </p>
-            <table>
-                <tr>
-                    <td>
-                        שם:
-                    </td>
-                    <td>
-                        <input style="font-size:30px;" type="text" placeholder="שם" name="firstname" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        שם משפחה:
-                    </td>
-                    <td>
-                        <input style="font-size:30px;" type="text" placeholder="שם משפחה" name="lastname" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        מספר הנפשות:
-                    </td>
-                    <td>
-                        <input style="font-size:30px;" type="text" placeholder="מספר הנפשות" name="peoplenum" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        מגיעים בוודאות:
-                    </td>
-                    <td>
-                        <input style="font-size:30px;" type="radio" name="coming" value="yes" checked />כן
-                        <input style="font-size:30px;" type="radio" name="coming" value="no" />לא בטוח
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        אימייל:
-                    </td>
-                    <td>
-                        <input style="font-size:30px;" type="text" placeholder="האימייל שלך" name="email" required>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <button style="font-size:30px;" type="submit">אישור</button>
-                        <input style="font-size:30px;" type="reset" value="מחק הכל" />
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </main>
-    <p>
-
-    </p>
+    
+    <p><i><b style="font-size:45px;">העלייה לתורה ביום שבת </b> </i></p>
+    <p><i style="font-size:50px;">מיקום בית הכנסת:</i></p>
+    <a style="font-size:30px;" href="https://www.waze.com/ul?ll=32.24929940%2C34.92304850&navigate=yes" target="_blank"><img src="https://lh3.googleusercontent.com/ixIYlJjuyefo0mBaCeo9p75ofhT5dBzu2NvVEOYvGBasiL_nvaZgqLkVKvF0GgpnGQ"></a>
+    <p><i><b style="font-size:45px;">התפילה תתחיל בשעה 8:30 קידוש חגיגי ייתקים לאחר התפילה בגן האירועים מקום בלב ברעננה קבלת הפנים תערך בשעה 11:45 </b></i></p>
+    <p><i style="font-size:50px;">מיקום גן האירועים:</i></p>
+    <a style="font-size:30px;" href="https://www.waze.com/ul?place=ChIJ3S4D0A84HRUR8p3SE-w2oZU&ll=32.17272690%2C34.87228960&navigate=yes" target="_blank"><img src="download.png"></a>
+    <a style="font-size:40px;" onclick="alert = מצפים לראותכם" href="https://forms.gle/hVdbgUL99CjXazHU9">טופס אישור הגעה</a>
     <h1>מחכים לכם...</h1>
-    <img src="nitrae bekarov.png" />
 </body>
 </html>
