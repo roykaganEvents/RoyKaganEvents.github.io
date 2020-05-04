@@ -1,0 +1,17 @@
+
+body{
+    size: 800px;
+    text-align: center;
+    font-size: 100px;
+    font-family: 'david';
+    background-color: gray;
+}
+button{
+    size: 800px;
+    font-size: 50px;
+    border: 5ch;
+    color:rgb(79, 128, 134);
+    background-color: rgb(161, 170, 180);
+    border-radius: 60px;
+    float: left;
+}

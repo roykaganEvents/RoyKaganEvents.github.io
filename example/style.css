@@ -10,3 +10,10 @@ th, td {
 td {
     text-align: center;
 }
+body{
+    width: 800px;
+    height: 800px;
+    text-align: center;
+    font-family: 'david';
+    background-color: blueviolet;
+}
