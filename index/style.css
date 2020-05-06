@@ -8,10 +8,15 @@ body{
 }
 button{
     size: 800px;
-    font-size: 50px;
+    font-size: 25px;
     border: 5ch;
     color:rgb(79, 128, 134);
-    background-color: rgb(161, 170, 180);
-    border-radius: 60px;
+    background-color: rgb(255, 255, 255);
+    border: thin;
+    margin: 5px;
     float: left;
+    border-radius: 30px;
+}
+hr{
+    border-top: 15px solid teal;
 }

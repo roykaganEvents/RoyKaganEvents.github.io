@@ -9,4 +9,3 @@ function loadcss(filename){
     }
 }
 
-loadcss("themes/green.css");
